@@ -1,0 +1,83 @@
+<div *ngIf="activeTemp" class="container-fluid">
+<div class="row pie-charts">
+<ng2-toasty [position]="'top-center'"></ng2-toasty>
+  <div class="col">
+  <ba-card class="pie-chart-item-container center">
+    Temperatuur Sensor<br><br>
+    <h4>{{activeTemp.length}} Actief</h4>
+    <h4>{{inactiveTemp.length}} Inactief</h4>
+    <br>
+    <div class="btn-group" style="display: block;">
+      <button type="button" class="btn btn-primary btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Selecteer <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a (click)="createTemp('Sensor is succesvol toegevoegd')" href="#">Toevoegen</a></li>
+        <li><a (click)="modalStopTemp()" href="#">Stoppen</a></li>
+        <li><a (click)="modalRestartTemp()" href="#">Herstarten</a></li>
+        <li><a (click)="modalDeleteTemp()" href="#">Verwijderen</a></li>
+      </ul>
+    </div>
+  </ba-card>
+  </div>
+
+    <div class="col">
+      <ba-card class=" pie-chart-item-container center">
+        Luchtvochtigheid Sensor<br><br>
+        <h4>{{activeHumidity.length}} Actief</h4>
+        <h4>{{inactiveHumidity.length}} Inactief</h4>
+        <br>
+        <div class="btn-group" style="display: block;">
+          <button type="button" class="btn btn-primary btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Selecteer <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a (click)="createHumidity('Sensor is succesvol toegevoegd')" href="#">Toevoegen</a></li>
+            <li><a (click)="modalStopHumidity()" href="#">Stoppen</a></li>
+            <li><a (click)="modalRestartHumidity()" href="#">Herstarten</a></li>
+            <li><a (click)="modalDeleteHumidity()" href="#">Verwijderen</a></li>
+          </ul>
+        </div>
+      </ba-card>
+    </div>
+
+  <div class="col">
+    <ba-card class=" pie-chart-item-container center">
+      Licht Sensor<br><br>
+      <h4>{{activeLight.length}} Actief</h4>
+      <h4>{{inactiveLight.length}} Inactief</h4>
+      <br>
+      <div class="btn-group" style="display: block;">
+        <button type="button" class="btn btn-primary btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Selecteer <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a (click)="createLight('Sensor is succesvol toegevoegd')" href="#">Toevoegen</a></li>
+          <li><a (click)="modalStopLight()" href="#">Stoppen</a></li>
+          <li><a (click)="modalRestartLight()" href="#">Herstarten</a></li>
+          <li><a (click)="modalDeleteLight()" href="#">Verwijderen</a></li>
+        </ul>
+      </div>
+    </ba-card>
+  </div>
+</div>
+  <div class="row pie-charts">
+    <div class="col">
+    </div>
+
+    <div class="col"></div>
+    <div class="col"></div>
+  </div>
+</div>
+
+<br><br><br>
+<br><br>
+<div class="widgets">
+
+  <div class="row">
+    <ba-card title="Overzicht Sensoren" baCardClass="with-scroll" class="smart-table-container">
+      <ng2-smart-table [settings]="settings" [source]="source"></ng2-smart-table>
+    </ba-card>
+  </div>
+
+</div>
