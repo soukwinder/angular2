@@ -169,8 +169,6 @@ export class PieChart implements OnInit{
 
   //een notificatie als iets gewijzigt is.
   addToast(title) {
-    // Just add default Toast with title only
-    // Or create the instance of ToastOptions
     var toastOptions:ToastOptions = {
       title: title,
       msg: "",
@@ -178,8 +176,7 @@ export class PieChart implements OnInit{
       timeout: 5000,
       theme: 'default',
     };
-    // Add see all possible types in one shot
-    this.toastyService.success(toastOptions);
+    //this.toastyService.success(toastOptions);
   }
 
   //maak nieuwe sensor aan voor temp
@@ -189,6 +186,7 @@ export class PieChart implements OnInit{
         (data => {
          // this.activeTemp.length = this.activeTemp.length + 1,
           this.addToast(title)
+          location.reload()
         })
       )
   }
@@ -200,6 +198,7 @@ export class PieChart implements OnInit{
         (data => {
           // this.activeHumidity.length = this.activeHumidity.length + 1,
           this.addToast(title)
+          location.reload()
         })
       )
   }
@@ -211,6 +210,7 @@ export class PieChart implements OnInit{
         (data => {
           // this.activeLight.length = this.activeLight.length + 1,
           this.addToast(title)
+          location.reload()
         })
       )
   }
@@ -239,21 +239,6 @@ export class PieChart implements OnInit{
     for(var i = 0; i < sensor.length; i++){
       this.smartTableData.push({id: sensor[i], typesensor: type, statussensor: status})
     }
-    // for(var i = 0; i < this.inactiveTemp.length; i++){
-    //   this.smartTableData.push({id: this.inactiveTemp[i], typesensor: 'Temperatuur', statussensor: 'Inactief'})
-    // }
-    // for(var i = 0; i < this.activeHumidity.length; i++){
-    //   this.smartTableData.push({id: this.activeHumidity[i], typesensor: 'Luchtvochtigheid', statussensor: 'Actief'})
-    // }
-    // for(var i = 0; i < this.inactiveHumidity.length; i++){
-    //   this.smartTableData.push({id: this.inactiveHumidity[i], typesensor: 'Luchtvochtigheid', statussensor: 'Inactief'})
-    // }
-    // for(var i = 0; i < this.activeLight.length; i++){
-    //   this.smartTableData.push({id: this.activeLight[i], typesensor: 'Licht', statussensor: 'Actief'})
-    // }
-    // for(var i = 0; i < this.inactiveLight.length; i++){
-    //   this.smartTableData.push({id: this.inactiveLight[i], typesensor: 'Licht', statussensor: 'Inactief'})
-    // }
   }
 
   smartTableData = [];
@@ -265,5 +250,4 @@ export class PieChart implements OnInit{
       }, 2000);
     });
   }
-
 }

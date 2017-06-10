@@ -32,7 +32,7 @@ export class DefaultModal implements OnInit {
       timeout: 5000,
       theme: 'default',
     };
-    this.toastyService.success(toastOptions);
+    //this.toastyService.success(toastOptions);
   }
 
   ngOnInit() {
@@ -73,6 +73,7 @@ export class DefaultModal implements OnInit {
       .subscribe(
         (data => {
           this.addToast(title)
+          location.reload()
         })
       )
   }
@@ -82,6 +83,7 @@ export class DefaultModal implements OnInit {
       .subscribe(
         (data => {
           this.addToast(title)
+          location.reload()
         })
       )
   }
@@ -91,6 +93,7 @@ export class DefaultModal implements OnInit {
       .subscribe(
         (data => {
           this.addToast(title)
+          location.reload()
         })
       )
   }
@@ -149,6 +152,7 @@ export class DefaultModal implements OnInit {
       .subscribe(
         (data => {
           this.addToast(title)
+          location.reload()
         })
       )
   }
@@ -158,6 +162,7 @@ export class DefaultModal implements OnInit {
       .subscribe(
         (data => {
           this.addToast(title)
+          location.reload()
         })
       )
   }
@@ -167,6 +172,7 @@ export class DefaultModal implements OnInit {
       .subscribe(
         (data => {
           this.addToast(title)
+          location.reload()
         })
       )
   }
@@ -225,6 +231,7 @@ export class DefaultModal implements OnInit {
       .subscribe(
         (data => {
           this.addToast(title)
+          location.reload()
         })
       )
   }
@@ -234,6 +241,7 @@ export class DefaultModal implements OnInit {
       .subscribe(
         (data => {
           this.addToast(title)
+          location.reload()
         })
       )
   }
@@ -243,6 +251,7 @@ export class DefaultModal implements OnInit {
       .subscribe(
         (data => {
           this.addToast(title)
+          location.reload()
         })
       )
   }

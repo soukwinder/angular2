@@ -6,6 +6,7 @@ import {Http} from "@angular/http";
 export class PieChartService {
 
   url = 'http://localhost:3001/'
+  url1 = 'http://localhost:3005/'
 
   constructor(private http: Http) {
 
@@ -18,6 +19,10 @@ export class PieChartService {
 
   getInactiveTemp(){
     return this.http.get(this.url+'api/streamdata/temp/sensor/inactive')
+  }
+
+  getTotalTemp(){
+    return this.http.get(this.url+'api/streamdata/temp/sensors/totaal')
   }
 
   createSensorTemp(){
@@ -45,6 +50,10 @@ export class PieChartService {
     return this.http.get(this.url+'api/streamdata/humidity/sensor/inactive')
   }
 
+  getTotalHumidity(){
+    return this.http.get(this.url+'api/streamdata/humidity/sensors/totaal')
+  }
+
   createSensorHumidity(){
     return this.http.get(this.url+'api/streamdata/update/humidity')
   }
@@ -70,6 +79,10 @@ export class PieChartService {
     return this.http.get(this.url+'api/streamdata/light/sensor/inactive')
   }
 
+  getTotalLight(){
+    return this.http.get(this.url+'api/streamdata/light/sensors/totaal')
+  }
+
   createSensorLight(){
     return this.http.get(this.url+'api/streamdata/update/light')
   }
@@ -84,5 +97,11 @@ export class PieChartService {
 
   deleteSensorLight(id){
     return this.http.get(this.url+'api/streamdata/light/remove/'+id)
+  }
+
+  //visualisatie data
+
+  getLineData(sensor, year, month, id){
+    return this.http.get(this.url1+sensor+'/'+year+'/'+month+'/'+id)
   }
 }

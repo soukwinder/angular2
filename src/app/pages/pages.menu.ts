@@ -14,50 +14,50 @@ export const PAGES_MENU = [
           }
         }
       },
-      {
-        path: 'editors',
-        data: {
-          menu: {
-            title: 'general.menu.editors',
-            icon: 'ion-edit',
-            selected: false,
-            expanded: false,
-            order: 100,
-          }
-        },
-        children: [
-          {
-            path: 'ckeditor',
-            data: {
-              menu: {
-                title: 'general.menu.ck_editor',
-              }
-            }
-          }
-        ]
-      },
-      {
-        path: 'components',
-        data: {
-          menu: {
-            title: 'general.menu.components',
-            icon: 'ion-gear-a',
-            selected: false,
-            expanded: false,
-            order: 250,
-          }
-        },
-        children: [
-          {
-            path: 'treeview',
-            data: {
-              menu: {
-                title: 'general.menu.tree_view',
-              }
-            }
-          }
-        ]
-      },
+      // {
+      //   path: 'editors',
+      //   data: {
+      //     menu: {
+      //       title: 'general.menu.editors',
+      //       icon: 'ion-edit',
+      //       selected: false,
+      //       expanded: false,
+      //       order: 100,
+      //     }
+      //   },
+      //   children: [
+      //     {
+      //       path: 'ckeditor',
+      //       data: {
+      //         menu: {
+      //           title: 'general.menu.ck_editor',
+      //         }
+      //       }
+      //     }
+      //   ]
+      // },
+      // {
+      //   path: 'components',
+      //   data: {
+      //     menu: {
+      //       title: 'general.menu.components',
+      //       icon: 'ion-gear-a',
+      //       selected: false,
+      //       expanded: false,
+      //       order: 250,
+      //     }
+      //   },
+      //   children: [
+      //     {
+      //       path: 'treeview',
+      //       data: {
+      //         menu: {
+      //           title: 'general.menu.tree_view',
+      //         }
+      //       }
+      //     }
+      //   ]
+      // },
       {
         path: 'charts',
         data: {
