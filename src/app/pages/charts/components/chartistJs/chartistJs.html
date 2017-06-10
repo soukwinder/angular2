@@ -1,7 +1,6 @@
-
 <div class="row">
-  <form [formGroup]="productForm">
     <div class="col">
+      <form [formGroup]="productForm">
       <ba-card>
       <div class="row">
         <div class="col">
@@ -41,15 +40,80 @@
           </div>
         </div>
         <div class="col">
+          ID<br>
+          <div class="form-group">
+            <select formControlName="product1" class="form-control" id="exampleSelect44">
+              <option value="Selecteer:">Selecteer:</option>
+              <option *ngFor="let p of productsAfterChangeEvent">{{p.name}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="col">
           <br>
           <button class="btn btn-success confirm-btn" (click)="update($event)">Update</button>
         </div>
       </div>
       <p-chart type="line" [data]="data" (onDataSelect)="selectData($event)"></p-chart>
       </ba-card>
+  </form>
     </div>
 
-    <div class="col">
-    </div>
-  </form>
+  <div class="col">
+    <form [formGroup]="productForm1">
+      <ba-card>
+        <div class="row">
+          <div class="col">
+            Sensor<br>
+            <div class="form-group">
+              <select formControlName="productType1" class="form-control" (change)="test1()" id="exampleSelect5">
+                <option value="Selecteer:">Selecteer:</option>
+                <option *ngFor="let t of sensorType">{{t}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="col">
+            Jaar<br>
+            <div class="form-group">
+              <select formControlName="years1" class="form-control" id="exampleSelect6">
+                <option value="Selecteer:">Selecteer:</option>
+                <option *ngFor="let t of years">{{t}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="col">
+            Maand <br>
+            <div class="form-group">
+              <select formControlName="months1" class="form-control" id="exampleSelect7">
+                <option value="Selecteer:">Selecteer:</option>
+                <option *ngFor="let t of months" let i = 1;>{{t}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="col">
+            ID<br>
+            <div class="form-group">
+              <select formControlName="product" class="form-control" id="exampleSelect8">
+                <option value="Selecteer:">Selecteer:</option>
+                <option *ngFor="let p of productsAfterChangeEvent1">{{p.name}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="col">
+            ID<br>
+            <div class="form-group">
+              <select formControlName="product1" class="form-control" id="exampleSelect88">
+                <option value="Selecteer:">Selecteer:</option>
+                <option *ngFor="let p of productsAfterChangeEvent1">{{p.name}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="col">
+            <br>
+            <button class="btn btn-success confirm-btn" (click)="update1($event)">Update</button>
+          </div>
+        </div>
+        <p-chart type="line" [data]="data1" (onDataSelect)="selectData($event)"></p-chart>
+      </ba-card>
+    </form>
+  </div>
   </div>
