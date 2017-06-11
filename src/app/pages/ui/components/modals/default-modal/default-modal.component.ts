@@ -11,6 +11,7 @@ import {ToastyService, ToastyConfig, ToastOptions, ToastData} from 'ng2-toasty';
 
 export class DefaultModal implements OnInit {
 
+  //alle variables
   modalHeader: string;
   modalContent;
   activeTemp;
@@ -24,6 +25,7 @@ export class DefaultModal implements OnInit {
     this.toastyConfig.theme = 'default';
   }
 
+  //functie voor de notificatie
   addToast(title) {
     var toastOptions:ToastOptions = {
       title: title,
@@ -35,6 +37,7 @@ export class DefaultModal implements OnInit {
     //this.toastyService.success(toastOptions);
   }
 
+  //deze functies worden als eerst uitgevoerd
   ngOnInit() {
     this.getActiveTemp()
     this.getInactiveTemp()
@@ -44,7 +47,7 @@ export class DefaultModal implements OnInit {
     this.getInactiveLight()
   }
 
-  //temp services
+  //temp services voor actief, inactief, stoppen etc..
   getActiveTemp(){
   this._pieChartService.getActiveTemp()
     .subscribe(
@@ -123,7 +126,7 @@ export class DefaultModal implements OnInit {
     this.activeModal.close();
   }
 
-  //luchtvochtigheid services
+  //luchtvochtigheid services voor actief, inactief, stoppen etc..
   getActiveHumidity(){
     this._pieChartService.getActiveHumidity()
       .subscribe(
@@ -202,7 +205,7 @@ export class DefaultModal implements OnInit {
     this.activeModal.close();
   }
 
-  //licht services
+  //licht services voor actief, inactief, stoppen etc..
   getActiveLight(){
     this._pieChartService.getActiveLight()
       .subscribe(

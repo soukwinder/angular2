@@ -11,7 +11,7 @@ import { ChartistJs } from './components/chartistJs/chartistJs.component';
 import { ChartistJsService } from './components/chartistJs/chartistJs.service';
 import { AppTranslationModule } from '../../app.translation.module';
 import {PieChartService} from "../dashboard/pieChart/pieChart.service";
-
+//import alle benodigde modules
 @NgModule({
   imports: [
     CommonModule,

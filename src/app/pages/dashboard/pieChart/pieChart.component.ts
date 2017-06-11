@@ -12,9 +12,10 @@ import {LocalDataSource} from "ng2-smart-table";
   templateUrl: './pieChart.html',
   styleUrls: ['./pieChart.scss']
 })
-// TODO: move easypiechart to component
+
 export class PieChart implements OnInit{
 
+//alle variables die nodig zijn.
   activeTemp;
   inactiveTemp;
 
@@ -34,6 +35,7 @@ export class PieChart implements OnInit{
     });
   }
 
+  //deze functies worden als eerst uitgevoerd
   ngOnInit() {
     this.getActiveTemp()
     this.getInactiveTemp()
@@ -215,7 +217,7 @@ export class PieChart implements OnInit{
       )
   }
 
-  //table
+  //smart table config
   query: string = '';
 
   settings = {

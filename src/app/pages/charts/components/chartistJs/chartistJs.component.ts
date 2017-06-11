@@ -11,6 +11,7 @@ import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 })
 
 export class ChartistJs implements OnInit{
+  //benaming alle variables die nodig zijn
   sensorType = ['temperatuur', 'luchtvochtigheid', 'licht'];
   months = [1,2,3,4,5,6,7,8,9,11,12];
 
@@ -41,6 +42,7 @@ export class ChartistJs implements OnInit{
   productForm1 : FormGroup;
 
   constructor(private dataService: PieChartService, fb: FormBuilder) {
+    //maken van een formgroup, zodat ze aangesproken kunnen worden
     this.productForm = fb.group({
       months: [],
       years: [],
@@ -61,11 +63,13 @@ export class ChartistJs implements OnInit{
   }
 
   ngOnInit(){
+    //voert als eerst deze functies uit
     this.getTotalIdsTemp()
     this.getTotalIdsHumidity()
     this.getTotalIdsLight()
   }
 
+  //laat de bijhorende ids zien van de geselecteerde sensors
   test(){
     const productType = this.productForm.get('productType').value;
     this.productsAfterChangeEvent = this.allProducts.filter(p => p.type == productType);
@@ -75,6 +79,7 @@ export class ChartistJs implements OnInit{
     this.productsAfterChangeEvent1 = this.allProducts.filter(p => p.type == productType);
   }
 
+  //totale actieve en inactieve ids van de sensor temperatuur
   getTotalIdsTemp(){
     this.dataService.getTotalTemp()
       .subscribe(
@@ -85,6 +90,7 @@ export class ChartistJs implements OnInit{
       )
   }
 
+  //totale actieve en inactieve ids van de sensor luchtvochtigheid
   getTotalIdsHumidity(){
     this.dataService.getTotalHumidity()
       .subscribe(
@@ -95,6 +101,7 @@ export class ChartistJs implements OnInit{
       )
   }
 
+  //totale actieve en inactieve ids van de sensor licht
   getTotalIdsLight(){
     this.dataService.getTotalLight()
       .subscribe(
@@ -105,12 +112,14 @@ export class ChartistJs implements OnInit{
       )
   }
 
+  //voegt de ids toe aan de dropdown list
   alleData(ids, type){
     for(var i = 0; i < ids.length; i++){
       this.allProducts.push({name: ids[i], type: type})
     }
   }
 
+  //update de grafiek met de geselecteerde data
   update(event: Event){
     const productType = this.productForm.get('productType').value;
     const months = this.productForm.get('months').value;
@@ -132,6 +141,7 @@ export class ChartistJs implements OnInit{
         }))
   }
 
+  //update de grafiek met de geselecteerde data
   update1(event: Event){
     const productType = this.productForm1.get('productType1').value;
     const months = this.productForm1.get('months1').value;
@@ -155,8 +165,8 @@ export class ChartistJs implements OnInit{
         )
   }
 
+  //maakt de grafiek
   createLineData(linedata, id, id1){
-
     console.log(id1)
     this.meanArray = []
     this.meanArray1 = []
@@ -190,6 +200,7 @@ export class ChartistJs implements OnInit{
     }
   }
 
+  //maakt de lijngrafiek
   createLineData1(linedata, id, id1){
     this.meanArray = []
     this.meanArray1 = []

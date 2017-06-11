@@ -8,7 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 export function createTranslateLoader(http: Http) {
     return new TranslateHttpLoader(http, './assets/i18n/US/', '.json');
 }
-
+//regelt de vertaalfunctie
 const translationOptions = {
   loader: {
     provide: TranslateLoader,
